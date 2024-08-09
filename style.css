@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root{
+    /*colors*/
+    --primary: #00B0D7;
+    --accent: #FF6060;
+    --dark:#001B2F;
+    --light: #fff;
+    --display_light: #FAFAFA;
+    --display_dark: #00223A;
+    --actions__light:#E9F6FF;
+    --actions__dark:#001B2F;
+
+
+    --transition:all 0.3s ease-in-out
+}
+
+* {
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    pointer-events: 0;
+}
+/* калькулятор */
+.calculator{
+     width: 320px;
+     border-radius: 20px;
+     overflow: hidden;
+     box-shadow: 8px 32px 64px rgba(0, 0, 0, 0.3);
+     position: relative;
+     transition: var(--transition);
+}
+
+.calculator__display{
+    padding: 20px 24px;
+    padding-bottom: 44px;
+    margin-bottom: -24px;
+    background-color: var(--display_light);
+    text-align: right;
+    transition: var(--transition);
+
+}
+.calculator__history{
+    font-size: 24px;
+    height: 33px;
+}
+.calculator__history strong{
+    font-weight: 400;
+    color: var(--accent);
+}
+.calculator__total{
+    font-size: 32px;
+    font-weight: 600;
+    height: 42px;
+}
+.calculator__actions{
+     background-color: var(--actions__light);
+     border-radius: 20px;
+     padding: 16px;
+     padding-bottom: 32px;
+     font-size: 24px;
+     transition: var(--transition);
+
+}
+.calculator__row{
+    display: flex;
+    justify-content: space-between;
+}
+.calculator__col{
+    --size:64px;
+    cursor: pointer;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calculator__col img{
+    pointer-events: none;
+}
+.calculator__col_reset{
+    color: var(--accent);
+
+}
+.calculator__col_actions{
+    color: var(--primary);
+
+}
+
+
+
+/* смена темы */
+.calculator_dark{
+    color: var(--light);
+}
+
+.calculator_dark .calculator__display{
+    background-color: var(--display_dark);
+}
+.calculator_dark .calculator__actions{
+    background-color: var(--actions__dark);
+}
+
+.theme{
+    --size: 20px;
+    width: var(--size);
+    height: var(--size);
+    font-size: var(--size);
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    color: var(--light);
+    transition: var(--transition);
+
+
+}
+
+.theme i{
+    transition: var(--transition);
+
+}
+.theme_dark{
+    color: var(--dark);
+}
+
+.theme_dark i:first-child {
+    margin-left: calc(var(--size)* -1);
+
+}
